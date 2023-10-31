@@ -18,7 +18,9 @@ export const InputContainer = styled.div`
     justify-content: space-between;
     margin-left: 33rem;
     margin-top: 1rem;
-
+    :focus{
+            border: 2px solid ${props => props.theme['baseLabel']}; 
+        }
     input {
         width:100%;
         height: 3.1rem;
@@ -30,6 +32,7 @@ export const InputContainer = styled.div`
         font-size: 1rem;
         text-indent: 10px;
 
+      
         
 
     &::placeholder{

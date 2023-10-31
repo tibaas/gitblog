@@ -13,6 +13,7 @@ gap: 1rem;
 margin-top: 2.5rem;
 border-radius: 10px;
 background: ${props => props.theme['basePost']};
+box-shadow:  4px 4px 5px black;
 line-height: 1.4rem;
 cursor: pointer;
 
