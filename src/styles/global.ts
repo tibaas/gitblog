@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 body {
     background: ${props => props.theme['baseBackground']};
     font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
 }
 
 

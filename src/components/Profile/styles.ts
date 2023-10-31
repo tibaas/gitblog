@@ -70,8 +70,6 @@ display: flex;
 align-items: center;
 margin-bottom: 1.5rem;
 
-
-
 `
 
 export const LinkSpan = styled.div`

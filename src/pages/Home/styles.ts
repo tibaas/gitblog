@@ -72,8 +72,6 @@ export const PostContainer = styled.div`
 
 max-width: 56rem;
 margin-left: 33rem;
-height: 100%;
-
 display: grid;
 grid-template-columns: 1fr 1fr;
 

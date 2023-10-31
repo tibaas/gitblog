@@ -22,7 +22,9 @@ export function Home() {
                 <Post />
                 <Post /> 
                 <Post /> 
+                <Post />
                 <Post />  
+                <Post />    
             </PostContainer>
                 
         </>
