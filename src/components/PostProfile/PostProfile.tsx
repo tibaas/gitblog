@@ -1,24 +1,26 @@
-import { GithubLogo, Link } from "phosphor-react";
-import { IconsContainer, ImageContainer, LinkSpan, ProfileContainer, ProfileContent, TitleContainer, TittleSpan } from "./styles";
+import { ArrowLeft, GithubLogo, Link } from "phosphor-react";
+import { BackLink, IconsContainer, LinkSpan, ProfileContainer, ProfileContent, TitleContainer, TittleSpan } from "./styles";
 
 
 export function PostProfile() {
     return (
         <ProfileContainer>
-        <ImageContainer>
-            <img src="https://avatars.githubusercontent.com/u/59897978?v=4" alt="" />
-        </ImageContainer>
+
         <ProfileContent>
             <TitleContainer>
-                <TittleSpan>Igor Tibério</TittleSpan>
+                <BackLink>
+                <ArrowLeft size={17} /><a href="/"> VOLTAR</a>
+                
+                </BackLink>
+                
                  <LinkSpan>
-                    <a href="https://github.com/tibaas">GITHUB</a>
+                    <a href="https://github.com/tibaas">VER NO GITHUB</a>
                  <Link size={17} color={'#3294F8'} />
                  </LinkSpan>
                
             </TitleContainer>
 
-            <p>Passionate about technology since childhood, had my first contact with a computer when I was 11 years old. Since then, have been passionate about technology and code.</p>
+            <TittleSpan>JavaScript data types and data structures</TittleSpan>
             <IconsContainer>
                 <div>
                     <GithubLogo size={24}  /> <p>tibaas</p>
