@@ -8,6 +8,8 @@ display: flex;
 align-items: center;
 padding: 2rem;
 position: absolute;
+margin-left: 32rem;
+
 
 
 border-radius: 10px;

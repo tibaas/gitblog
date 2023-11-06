@@ -1,6 +1,6 @@
 import { PostContent, SpanTitle, SpanDate, TitleContainer} from "./styles";
 
-export function Post() {
+export function HomePagePost() {
     return (
         
             <PostContent>  
