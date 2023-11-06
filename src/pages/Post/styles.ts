@@ -7,3 +7,19 @@ align-items: center;
 
 
 `
+
+export const ContentContainer = styled.div`
+height: 10.5rem;
+width: 54rem;
+display: flex;
+align-items: center;
+padding: 2rem;
+margin-left: 33rem;
+margin-top: 7rem;
+
+p {
+    color: ${props => props.theme['baseText']};
+    line-height: 1.5rem;
+}
+
+`
