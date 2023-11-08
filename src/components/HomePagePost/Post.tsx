@@ -1,27 +1,19 @@
-import axios from "axios";
 import { PostContent, SpanTitle, SpanDate, TitleContainer, Content} from "./styles";
 import { useEffect, useState } from "react";
 import { NavLink } from 'react-router-dom'
-
-
-
-const api = axios.create({
-    baseURL: "https://api.github.com"
-})
+import { api } from "../../utils/api";
 
 
 interface GitHubIssue {
-    comments: number
+    id: number
     title: string
     body: string
-    id: number
+    comments: number
     created_at: string
     user: {
       html_url: string
       login: string
-    }
-    
-    
+    } 
   }
   
 
