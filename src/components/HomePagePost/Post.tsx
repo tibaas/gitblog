@@ -11,7 +11,6 @@ const api = axios.create({
 
 
 interface GitHubIssue {
-    bio: string
     comments: number
     title: string
     body: string
