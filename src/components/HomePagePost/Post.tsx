@@ -1,23 +1,58 @@
-import { PostContent, SpanTitle, SpanDate, TitleContainer} from "./styles";
+import axios from "axios";
+import { PostContent, SpanTitle, SpanDate, TitleContainer, Content} from "./styles";
+import { useEffect, useState } from "react";
+import { NavLink } from 'react-router-dom'
+
+
+
+const api = axios.create({
+    baseURL: "https://api.github.com"
+})
+
+
+interface GitHubIssue {
+    bio: string
+    comments: number
+    title: string
+    body: string
+    id: number
+    created_at: string
+    user: {
+      html_url: string
+      login: string
+    }
+    
+    
+  }
+  
+
 
 export function HomePagePost() {
+    const [issues, setIssues] = useState<GitHubIssue[]>([])
+    const dateFormatter = new Intl.DateTimeFormat('pt-BR');
+    useEffect(() => {
+        api.get("/repos/rocketseat-education/reactjs-github-blog-challenge/issues")
+        .then((response) => setIssues(response.data))
+    }, [])
+
+    
     return (
-        
-            <PostContent>  
-                <TitleContainer>
-                    <SpanTitle>
-                        JavaScript data types and data structures 
-                    </SpanTitle> 
-                  
-                        <SpanDate> Há 1 dia</SpanDate>
-                                 
-                </TitleContainer>         
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate a commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                        
-                    </p>
-                                   
-            </PostContent>
-        
+        <>
+            {issues.map((issue) => (
+                <PostContent key={issue.id}>   
+                <NavLink to="/post">
+                    <TitleContainer>
+                       <SpanTitle>
+                          {issue.title}
+                      </SpanTitle> 
+                          <SpanDate>{dateFormatter.format(new Date(issue.created_at))}</SpanDate>                                 
+                    </TitleContainer>         
+                        <Content>
+                            {issue.body}      
+                        </Content>                        
+                </NavLink>                      
+                </PostContent>
+            ))}                      
+        </>    
     )
 }

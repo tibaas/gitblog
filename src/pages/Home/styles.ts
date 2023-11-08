@@ -45,6 +45,7 @@ export const InputContainer = styled.div`
 
 `
 
+
 export const SpanContainer = styled.div`
     
     width: 54rem;
@@ -73,10 +74,15 @@ export const SpanContainer = styled.div`
 
 export const PostContainer = styled.div`
 
-max-width: 56rem;
+width: 56rem;
 margin-left: 33rem;
+
+
 display: grid;
-grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
+
+
+
 
 
 

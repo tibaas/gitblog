@@ -3,6 +3,7 @@ import { HomePagePost } from "../../components/HomePagePost/Post";
 import { Profile } from "../../components/Profile/Profile";
 import { HomeContainer, InputContainer, SpanContainer, PostContainer } from "./styles";
 
+
 export function Home() {
     return (
         <>
@@ -17,14 +18,9 @@ export function Home() {
             <InputContainer>
                 <input type="text" placeholder="Buscar conteúdo" />
             </InputContainer>
-            <PostContainer>
-                <HomePagePost /> 
-                <HomePagePost />
-                <HomePagePost /> 
-                <HomePagePost />
-                <HomePagePost />  
-                <HomePagePost />    
-            </PostContainer>
+                <PostContainer>                  
+                        <HomePagePost />                  
+                </PostContainer>
                 
         </>
 

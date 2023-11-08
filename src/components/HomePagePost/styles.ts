@@ -5,9 +5,10 @@ import styled from "styled-components";
 export const PostContent = styled.div`
 width: 26rem;
 height: 16.25rem;
-padding: 2rem;
+padding: 1.4rem;
 display: flex;
-align-items: flex-start;
+
+overflow:hidden;
 flex-direction: column;
 gap: 1rem;
 margin-top: 2.5rem;
@@ -17,12 +18,12 @@ box-shadow:  4px 4px 5px black;
 line-height: 1.4rem;
 cursor: pointer;
 
-
-p {
-    color: ${props => props.theme['baseText']};
-    overflow: hidden;
-    
+//Navlink styles
+a {
+    text-decoration: none;
+    overflow: hidden;  
 }
+
 
 &:hover {
     border:  2px solid ${props => props.theme['baseLabel']};
@@ -40,8 +41,8 @@ width: 17rem;
 `
 
 export const SpanDate = styled.span`
-margin-left: 20rem;
-margin-top: 0.500rem;
+margin-left: 18rem;
+margin-top: 0.450rem;
 position: absolute;
 
 
@@ -54,6 +55,15 @@ export const TitleContainer = styled.div`
 display: flex;
 flex-direction: column;
 
+
+
+`
+
+export const Content = styled.div`
+overflow: hidden;
+color: ${props => props.theme['baseText']};
+text-align:justify;
+margin-top: 1rem;
 
 
 `
