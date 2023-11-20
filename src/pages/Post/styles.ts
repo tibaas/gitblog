@@ -9,7 +9,7 @@ align-items: center;
 `
 
 export const ContentContainer = styled.div`
-height: 10.5rem;
+height: 100%;
 width: 54rem;
 display: flex;
 align-items: center;

@@ -1,4 +1,4 @@
-import { GithubLogo,Code,  Users, Link, BookBookmark } from "phosphor-react";
+import { GithubLogo, Code, Users, Link, BookBookmark } from "phosphor-react";
 import { ProfileContainer, ImageContainer, ProfileContent, IconsContainer, TitleContainer, LinkSpan, TittleSpan } from "./styles";
 import { useEffect, useState } from 'react'
 import { api } from "../../utils/api";

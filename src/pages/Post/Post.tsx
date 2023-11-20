@@ -1,7 +1,11 @@
 import { PostProfile } from "../../components/PostProfile/PostProfile";
 import { ContentContainer, PostProfileContainer } from "./styles";
+import { useLocation } from 'react-router-dom';
+
 
 export function Post() {
+    const location = useLocation()
+    const { issue } = location.state || { issue: {} }
     return (
         <>
             <PostProfileContainer>
@@ -10,7 +14,7 @@ export function Post() {
 
             <ContentContainer>
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate a commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    {issue.body}
                 </p>
 
             </ContentContainer>

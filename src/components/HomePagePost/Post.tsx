@@ -1,6 +1,6 @@
 import { PostContent, SpanTitle, SpanDate, TitleContainer, Content} from "./styles";
 import { useEffect, useState } from "react";
-import { NavLink } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 import { api } from "../../utils/api";
 
 
@@ -15,10 +15,15 @@ interface GitHubIssue {
       login: string
     } 
   }
+
+
   
 export function HomePagePost() {
     const [issues, setIssues] = useState<GitHubIssue[]>([])
     const dateFormatter = new Intl.DateTimeFormat('pt-BR')
+    const navigate = useNavigate()
+
+
     useEffect(() => {
         api.get("/repos/rocketseat-education/reactjs-github-blog-challenge/issues")
         .then((response) => setIssues(response.data))
@@ -27,20 +32,21 @@ export function HomePagePost() {
     return (
         <>
             {issues.map((issue) => (
-                <PostContent key={issue.id}>   
-                <NavLink to="/post">
+                <PostContent key={issue.id} onClick={() => navigate('/post', { state: { issue }})}>                     
                     <TitleContainer>
-                       <SpanTitle>
-                          {issue.title}
-                      </SpanTitle> 
-                          <SpanDate>{dateFormatter.format(new Date(issue.created_at))}</SpanDate>                                 
-                    </TitleContainer>         
+                        <SpanTitle>
+                        {issue.title}
+                        </SpanTitle> 
+                        <SpanDate>{dateFormatter.format(new Date(issue.created_at))}</SpanDate>                                 
+                        </TitleContainer>         
                         <Content>
                             {issue.body}      
-                        </Content>                        
-                </NavLink>                      
+                        </Content>                                              
                 </PostContent>
-            ))}                      
+            ))}  
         </>    
     )
 }
+
+
+
