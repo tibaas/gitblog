@@ -7,7 +7,6 @@ export function PostProfile() {
     const location = useLocation()
     const { issue } = location.state || { issue: {} }
     const dateFormatter = new Intl.DateTimeFormat('pt-BR')
-    console.log(issue)
     return (
         <ProfileContainer>
 

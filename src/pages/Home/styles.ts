@@ -49,7 +49,7 @@ export const InputContainer = styled.div`
 export const SpanContainer = styled.div`
     
     width: 54rem;
-    margin-top: 14rem;
+    margin-top: 10rem;
     margin-left: 33rem;
     
     display: flex;

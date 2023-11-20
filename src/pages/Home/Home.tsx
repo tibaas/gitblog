@@ -5,6 +5,7 @@ import { HomeContainer, InputContainer, SpanContainer, PostContainer } from "./s
 
 
 export function Home() {
+
     return (
         <>
             <HomeContainer>
@@ -13,7 +14,7 @@ export function Home() {
             </HomeContainer>
             <SpanContainer>
                 <span>Publicações</span>
-                <p>6 publicações</p>
+                <p>8 publicações</p>
             </SpanContainer>
             <InputContainer>
                 <input type="text" placeholder="Buscar conteúdo" />

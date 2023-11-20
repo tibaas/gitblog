@@ -23,12 +23,11 @@ export function HomePagePost() {
     const dateFormatter = new Intl.DateTimeFormat('pt-BR')
     const navigate = useNavigate()
 
-
     useEffect(() => {
         api.get("/repos/rocketseat-education/reactjs-github-blog-challenge/issues")
         .then((response) => setIssues(response.data))
     }, [])
- 
+    
     return (
         <>
             {issues.map((issue) => (
