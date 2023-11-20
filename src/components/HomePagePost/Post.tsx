@@ -16,17 +16,14 @@ interface GitHubIssue {
     } 
   }
   
-
-
 export function HomePagePost() {
     const [issues, setIssues] = useState<GitHubIssue[]>([])
-    const dateFormatter = new Intl.DateTimeFormat('pt-BR');
+    const dateFormatter = new Intl.DateTimeFormat('pt-BR')
     useEffect(() => {
         api.get("/repos/rocketseat-education/reactjs-github-blog-challenge/issues")
         .then((response) => setIssues(response.data))
     }, [])
-
-    
+ 
     return (
         <>
             {issues.map((issue) => (
