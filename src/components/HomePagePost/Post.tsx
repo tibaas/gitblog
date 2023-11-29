@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { api } from "../../utils/api";
 
 
-interface GitHubIssue {
+export interface GitHubIssue {
     id: number
     title: string
     body: string
@@ -16,9 +16,12 @@ interface GitHubIssue {
     } 
   }
 
+interface HomePagePostProps {
+    filter: string
 
-  
-export function HomePagePost() {
+}
+ 
+export function HomePagePost({ filter }: HomePagePostProps) {
     const [issues, setIssues] = useState<GitHubIssue[]>([])
     const dateFormatter = new Intl.DateTimeFormat('pt-BR')
     const navigate = useNavigate()
@@ -28,9 +31,12 @@ export function HomePagePost() {
         .then((response) => setIssues(response.data))
     }, [])
     
+    const filteredIssues = issues.filter(issue => 
+        issue.title.toLowerCase().includes(filter.toLowerCase()))
+    
     return (
         <>
-            {issues.map((issue) => (
+            {filteredIssues.map((issue) => (
                 <PostContent key={issue.id} onClick={() => navigate('/post', { state: { issue }})}>                     
                     <TitleContainer>
                         <SpanTitle>
