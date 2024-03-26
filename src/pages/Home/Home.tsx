@@ -8,6 +8,7 @@ import { api } from "../../utils/api";
 
 export function Home() {
     const [filter, setFilter] = useState<string>('')
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [issues, setIssues] = useState<GitHubIssue[]>([])
     const [filteredIssues, setFilteredIssues] = useState<GitHubIssue[]>([]);
 
@@ -16,7 +17,7 @@ export function Home() {
             .then((response) => {
                 const issues = response.data
                 setIssues(issues)
-                const filtered = issues.filter(issue =>
+                const filtered = issues.filter((issue: { title: string; }) =>
                     issue.title.toLowerCase().includes(filter.toLowerCase())
                 )
                 setFilteredIssues(filtered)
