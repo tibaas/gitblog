@@ -8,14 +8,14 @@ import { api } from "../../utils/api";
 
 export function Home() {
     const [filter, setFilter] = useState<string>('')
-    const [issues, setIssues] = useState<GitHubIssue[]>([])
+    // const [issues, setIssues] = useState<GitHubIssue[]>([])
     const [filteredIssues, setFilteredIssues] = useState<GitHubIssue[]>([]);
 
     useEffect(() => {
         api.get("/repos/rocketseat-education/reactjs-github-blog-challenge/issues")
             .then((response) => {
                 const issues = response.data
-                setIssues(issues)
+                // setIssues(issues)
                 const filtered = issues.filter((issue: { title: string; }) =>
                     issue.title.toLowerCase().includes(filter.toLowerCase())
                 )
@@ -24,7 +24,7 @@ export function Home() {
     }, [filter]);
 
     const numberOfFilteredIssues = filteredIssues.length;
-    console.log(issues)
+    // console.log(issues)
 
     return (
         <>
