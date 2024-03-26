@@ -8,7 +8,6 @@ import { api } from "../../utils/api";
 
 export function Home() {
     const [filter, setFilter] = useState<string>('')
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [issues, setIssues] = useState<GitHubIssue[]>([])
     const [filteredIssues, setFilteredIssues] = useState<GitHubIssue[]>([]);
 
@@ -25,6 +24,7 @@ export function Home() {
     }, [filter]);
 
     const numberOfFilteredIssues = filteredIssues.length;
+    console.log(issues)
 
     return (
         <>
